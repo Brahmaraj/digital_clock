@@ -1,3 +1,7 @@
+var div_var1=0;
+var div_var2=0;
+var div_var3=0;
+
 function clock() {
     var hours=document.getElementById("hours");
     var minutes=document.getElementById("minutes");
@@ -30,15 +34,15 @@ function makeDive() {
     var invalue = document.getElementById("wakeup-time-selector");
     var invalue1 = document.getElementById("lunch-time-selector");
     var invalue2 = document.getElementById("nap-time-selector");
-    if(invalue!=111){
+    if(div_var1==1){
     var value = invalue.options[invalue.selectedIndex].text;
     document.getElementById("dynamic-block").innerHTML="Breakfast Time "+ value;
     }
-    else if(invalue1){
+    else if(div_var2==1){
     var value = invalue1.options[invalue1.selectedIndex].text;
     document.getElementById("dynamic-block").innerHTML="Lunch Time "+ value;
     }
-    else if(invalue2){
+    else if(div_var3==1){
     var value = invalue2.options[invalue2.selectedIndex].text;
     document.getElementById("dynamic-block").innerHTML="Nap Time "+ value;
     }
@@ -52,14 +56,17 @@ function settimefunc() {
     if(a==hourr){
         document.getElementById("right-container-image").style.backgroundImage="url(assets/wakeup_image.svg)";
         document.getElementById("right-container-text").innerHTML="Breakfast Time!"
+        div_var1 =1;
     }
     else if(b==hourr){
         document.getElementById("right-container-image").style.backgroundImage="url(assets/lunch_image.svg)";
         document.getElementById("right-container-text").innerHTML="Lunch Time!"
+        div_var2 =1;
     }
     else if(c==hourr){
         document.getElementById("right-container-image").style.backgroundImage="url(assets/goodnight_image.svg)";
         document.getElementById("right-container-text").innerHTML="Nap Time!"
+        div_var3 = 1;
     }
     makeDive();
 }
