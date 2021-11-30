@@ -1,6 +1,4 @@
-var div_var1=0;
-var div_var2=0;
-var div_var3=0;
+
 
 function clock() {
     var hours=document.getElementById("hours");
@@ -11,6 +9,8 @@ function clock() {
     var time = new Date();
     var hour = time.getHours();
     var ampm = hour >= 12 ? "PM" : "AM";
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
     
     am_pm.innerHTML = ampm;
     hour = hour%12;
@@ -19,8 +19,15 @@ function clock() {
         hour = "0"+hour;
     }
     hours.innerHTML = hour;
-    minutes.innerHTML = time.getMinutes();
-    seconds.innerHTML = time.getSeconds();
+    if(minute<10){
+        minute = "0"+minute;
+    }
+    minutes.innerHTML = minute;
+    if(second<10){
+        second = "0" + second;
+    }
+    seconds.innerHTML = second;
+    
 }
 
 setInterval(clock,1000);
@@ -34,19 +41,10 @@ function makeDive() {
     var invalue = document.getElementById("wakeup-time-selector");
     var invalue1 = document.getElementById("lunch-time-selector");
     var invalue2 = document.getElementById("nap-time-selector");
-    if(div_var1==1){
     var value = invalue.options[invalue.selectedIndex].text;
-    document.getElementById("dynamic-block").innerHTML="Breakfast Time "+ value;
+    document.getElementById("dynamic-block").innerHTML="Breakfast Time is set to "+ value+"<br/> Lunch Time is set to "+ invalue1.options[invalue1.selectedIndex].text+" <br/>Nap Time is set to "+ invalue2.options[invalue2.selectedIndex].text;
     }
-    else if(div_var2==1){
-    var value = invalue1.options[invalue1.selectedIndex].text;
-    document.getElementById("dynamic-block").innerHTML="Lunch Time "+ value;
-    }
-    else if(div_var3==1){
-    var value = invalue2.options[invalue2.selectedIndex].text;
-    document.getElementById("dynamic-block").innerHTML="Nap Time "+ value;
-    }
-}
+
 
 function settimefunc() {
     var a = document.getElementById("wakeup-time-selector").value;
