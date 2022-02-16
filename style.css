@@ -195,6 +195,7 @@ body{
 }
 #right-container-image{
     background-image: url(assets/Happy-Birthday-Balloons-Free-PNG-Image.png);
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     background-size: 100%;
@@ -248,4 +249,77 @@ body{
     color: #fff;
     font-size: 30px;
     font-weight: 600;
+}
+
+@media only screen and (max-width:800px){
+    #clock{
+        position: absolute;
+        top: 50px;
+        left: 10%;
+        height: 100px;
+        font-size: 20px;
+    }
+    #hours,#minutes,#seconds{
+        font-size: 20px;
+    }
+    #clock2,#clock3,#clock4{
+        margin-left: 2px;
+        width: 200px;
+        background-color: #fff;
+    }
+    #am-img{
+        position: relative;
+        top: 0px;
+        left: -20px;
+        width: 50px;
+        height: 50px;
+    }
+    #digital-clock{
+        position: absolute;
+        top: 150px;
+        left: 10%;
+        width: 80vw;
+        height: 185px;
+    }
+    #lb1{
+        position: absolute;
+        top: 0px;
+        width: 70vw;
+        height: 200px;
+    }
+    #lb2{
+        position: absolute;
+        top: 0px;
+        width: 60vw;
+        height: 210px;
+    }
+    #left-container{
+        position: absolute;
+        top: 400px;
+        left: 10%;
+        width: 80vw;
+    }
+    #set-time{
+        position: absolute;
+        top: 750px;
+        left: 10%;
+        width: 80vw;
+        height: 100px;
+    }
+    #right-container{
+        position: absolute;
+        top: 900px;
+        left: 10%;
+        width: 80vw;
+    }
+    #dynamic-block{
+        position: absolute;
+        top: 1450px;
+        width: 80vw;
+        left: 10%;
+        height: auto;
+    }
+    #grid-container1,#grid-container2{
+        margin: 0;
+    }
 }
